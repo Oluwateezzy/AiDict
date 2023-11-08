@@ -26,7 +26,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>AI DICT</Text>
+      <Text style={styles.header}>Story Title</Text>
       <TextInput
         style={styles.input}
         onChangeText={handleUserInput}

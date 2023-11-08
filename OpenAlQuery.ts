@@ -10,7 +10,7 @@ export const getOpenAIResponse = async (input: string): Promise<string> => {
     const response = await axios.post(
       url,
       {
-        prompt: `Define ${input} format: Definition, Synonyms, antonyms and Example of usage`,
+        prompt: `Summarrize the story called ${input}`,
         max_tokens: maxTokens,
         model: "text-davinci-003",
       },
@@ -21,14 +21,6 @@ export const getOpenAIResponse = async (input: string): Promise<string> => {
         },
       }
     );
-
-    // const response = await fetch("/api/generate", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ result: input }),
-    //   });
 
     if (response.data.choices && response.data.choices.length > 0) {
       return response.data.choices[0].text.trim();
